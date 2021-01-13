@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "hompage": "https://czucziczucz.github.io/Catlens/",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
@@ -19,6 +20,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "predeploy": "npm run bulid",
+    "deploy":"gh-pages -d bulid"
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
