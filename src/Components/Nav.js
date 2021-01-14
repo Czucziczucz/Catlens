@@ -13,6 +13,8 @@ import Animals from '../Page/Animals'
 import Art from '../Page/Art'
 import Architecture from '../Page/Architecture'
 import ScrollToTop from './ScrollToTop'
+import device from '../Components/device'
+
 
 
 function Nav() {
@@ -21,18 +23,27 @@ function Nav() {
     
     const StyleNav = styled.div`
     font-size:50px;
-    height:500px;
+    height:100px;
     list-style:none;
     opacity:1;
     &:hover{
        
-    }
-    `
+    };
+    @media ${device.mobileL} {
+    font-size:30px;
+   
+     
+  }
+`
+    
     const StyleLi = styled.li`
     margin:50px; 30px;
     `
     
     const LinkWrap = styled(Link)`
+    text-shadow: 1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px #000, -2px 2px 0px  #000;
+    opacity:0.9;
+    padding:5px;
     list-style: none;
     text-decoration: none;
     color:white;
@@ -50,13 +61,14 @@ function Nav() {
     
     <>
    
-    <Router>
+    <Router onUpdate={()=> window.scrollTo(0,0)} >
     
     <div id="nav-icon3" style={{zIndex:"30"}} className={open?"open":""} onClick={()=>setOpen(!open)} >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
+      
     </div>
 
     <nav style={{
@@ -64,7 +76,7 @@ function Nav() {
     position:"fixed",
        transition:"ease-in-out 1s" ,
        transform: open?"translateX(0)":"translateX(-100%)",
-       backgroundColor:"black"
+       
        
       
      }}>
@@ -80,7 +92,7 @@ function Nav() {
         </StyleLi>
     
         <StyleLi>
-          <LinkWrap to="/Galery">Gallery</LinkWrap>
+          <LinkWrap to="/Galery">Contact</LinkWrap>
         </StyleLi>
         
         </StyleNav>

@@ -4,7 +4,7 @@
 
 #nav-icon3 {
   width: 60px;
-  height: 45px;
+  height: 15px;
   position: fixed;
   margin: auto;
   right: 0;
@@ -12,7 +12,18 @@
   transform: rotate(0deg);
   transition: ease-in-out 4s ;
   cursor: pointer;
+  
+  
 }
+
+@media only screen and (max-width: 425px) {
+#nav-icon3 {
+  width:40px;
+}
+
+}
+
+
 
 #nav-icon3 span {
   display: block;
@@ -25,6 +36,8 @@
   left: 0;
 transform: rotate(0deg);
   transition: .25s ease-in-out;
+  box-shadow: 1px 1px 0px  #000, -1px -1px 0px  #000, 1px -1px 0px #000, -2px 2px 0px  #000;
+ 
 }
 
 #nav-icon3 span:nth-child(1) {
@@ -57,6 +70,7 @@ transform: rotate(0deg);
 }
 
 #nav-icon3.open span:nth-child(4) {
+  
   top: 18px;
   width: 0%;
   left: 50%;
